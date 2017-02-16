@@ -1,26 +1,129 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Compound_Interest_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-hk-OiN">
+                                <rect key="frame" x="151" y="30" width="112" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YhW-iD-igw">
+                                <rect key="frame" x="20" y="73" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Final"/>
+                                    <segment title="Principal"/>
+                                    <segment title="Time"/>
+                                </segments>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="chooseMissingPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="eCO-oD-cOL"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="6" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HDO-pC-NUc">
+                                <rect key="frame" x="20" y="131" width="374" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="6" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Vz-iZ-j0d">
+                                <rect key="frame" x="20" y="181" width="374" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="6" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-OO-HVx">
+                                <rect key="frame" x="20" y="281" width="374" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIw-1a-lp4">
+                                <rect key="frame" x="150.66666666666669" y="341" width="113.00000000000006" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LWF-lU-3Gi"/>
+                                    <constraint firstAttribute="width" constant="113" id="x9o-TF-Pij"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybH-lZ-QbX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="6" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2RL-hB-LYZ">
+                                <rect key="frame" x="20" y="231" width="374" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="q4D-tz-bMU">
+                                <rect key="frame" x="20" y="425" width="374" height="123"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="90"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Vz-iZ-j0d" firstAttribute="top" secondItem="HDO-pC-NUc" secondAttribute="bottom" constant="20" id="2eu-Q5-Hxa"/>
+                            <constraint firstItem="aIw-1a-lp4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3ee-2k-6h3"/>
+                            <constraint firstItem="q4D-tz-bMU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="923-Mr-wXb"/>
+                            <constraint firstItem="6Vz-iZ-j0d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hbc-jY-JcL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YhW-iD-igw" secondAttribute="trailing" id="Hh6-3P-szT"/>
+                            <constraint firstItem="2RL-hB-LYZ" firstAttribute="top" secondItem="6Vz-iZ-j0d" secondAttribute="bottom" constant="20" id="I9p-oc-a1L"/>
+                            <constraint firstItem="tbU-OO-HVx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ivg-Aa-PhC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HDO-pC-NUc" secondAttribute="trailing" id="Ji8-7C-hBY"/>
+                            <constraint firstItem="6Vz-iZ-j0d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VMd-gG-o1D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tbU-OO-HVx" secondAttribute="trailing" id="VZ4-Jv-dTZ"/>
+                            <constraint firstItem="HDO-pC-NUc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VsR-S8-LRj"/>
+                            <constraint firstItem="YhW-iD-igw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YPZ-PT-EYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q4D-tz-bMU" secondAttribute="trailing" id="eeC-5E-Sec"/>
+                            <constraint firstItem="2RL-hB-LYZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="esn-ld-ncP"/>
+                            <constraint firstItem="tbU-OO-HVx" firstAttribute="top" secondItem="2RL-hB-LYZ" secondAttribute="bottom" constant="20" id="fZy-wg-0zm"/>
+                            <constraint firstItem="MSc-hk-OiN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="fnp-cA-Ej3"/>
+                            <constraint firstItem="q4D-tz-bMU" firstAttribute="top" secondItem="aIw-1a-lp4" secondAttribute="bottom" constant="40" id="gYA-Cm-JLi"/>
+                            <constraint firstItem="aIw-1a-lp4" firstAttribute="top" secondItem="tbU-OO-HVx" secondAttribute="bottom" constant="30" id="hIl-Pu-4nJ"/>
+                            <constraint firstItem="YhW-iD-igw" firstAttribute="top" secondItem="MSc-hk-OiN" secondAttribute="bottom" constant="10" id="hM5-SN-GSm"/>
+                            <constraint firstItem="HDO-pC-NUc" firstAttribute="top" secondItem="YhW-iD-igw" secondAttribute="bottom" constant="30" id="hph-Sh-mn8"/>
+                            <constraint firstItem="MSc-hk-OiN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m5c-Pr-5Nu"/>
+                            <constraint firstItem="2RL-hB-LYZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rPj-1D-z2G"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finelInterestLbl" destination="q4D-tz-bMU" id="wli-Ov-XoT"/>
+                        <outlet property="missingVarOutl" destination="YhW-iD-igw" id="M5K-ow-tOh"/>
+                        <outlet property="textFieldOutl1" destination="HDO-pC-NUc" id="cbn-ZP-TlA"/>
+                        <outlet property="textFieldOutl2" destination="6Vz-iZ-j0d" id="KY9-au-pJJ"/>
+                        <outlet property="textFieldOutl3" destination="2RL-hB-LYZ" id="0FG-fj-EdR"/>
+                        <outlet property="textFieldOutl4" destination="tbU-OO-HVx" id="h3h-bp-lFf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="138.58695652173915"/>
         </scene>
     </scenes>
 </document>
